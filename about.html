@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BSOV Media - About Us</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;900&display=swap">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <img src="images/bsov-logo.svg" alt="BSOV Media Logo" height="40">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="about.html">About Us</a></li>
+                    <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+                    <li class="nav-item"><a class="nav-link" href="pricing.html">Pricing</a></li>
+                    <li class="nav-item"><a class="nav-link" href="partners.html">Partners</a></li>
+                </ul>
+                    <a href="#contact" class="btn btn-contact ms-auto"><i class="bi bi-telephone"></i> Contact Us</a>
+            </div>
+        </div>
+    </nav>
+
+    <header class="hero about-hero text-white text-left py-5">
+        <div class="container position-relative">
+            <!-- Who We Are + Vision text inside the hero -->
+            <div class="hero-text">
+                <h2 class="section-subtitle text-white">Who We Are</h2>
+                <p class="hero-body">BSOV Media empowers student accommodations and real estate groups. We support sports brands and athletes with tailored content. Our mission is to attract the right audience, retain and grow communities effectively. Founded by Mfundo Dlame, we are brand builders.</p>
+
+                <h2 class="section-subtitle text-white mt-4">Our Vision</h2>
+                <p class="hero-body">We aim to lead in digital marketing, revolutionizing sports and property industries through bold creativity and data-driven strategies that deliver global impact.</p>
+            </div>
+
+            <!-- Floating decorative images (six) - use images from images/ folder; decorative so aria-hidden -->
+            <img src="images/float-img1.jpeg" alt="" aria-hidden="true" class="floating-img float-1">
+            <img src="images/float-img2.jpeg" alt="" aria-hidden="true" class="floating-img float-2 blurred">
+            <img src="images/float-img3.jpeg" alt="" aria-hidden="true" class="floating-img float-3">
+            <img src="images/float-img4.jpeg" alt="" aria-hidden="true" class="floating-img float-4 blurred">
+            <img src="images/float-img5.jpeg" alt="" aria-hidden="true" class="floating-img float-5">
+            <img src="images/float-img6.jpeg" alt="" aria-hidden="true" class="floating-img float-6">
+        </div>
+        <!-- scroll down arrow (to next section) -->
+        <a href="#executives" class="scroll-down" aria-label="Scroll to executives">
+            <i class="bi bi-chevron-down"></i>
+        </a>
+    </header>
+
+    <!-- keep shorter sections below; hero already contains the main who/vision text -->
+    <!-- who-we-are and vision are included in the hero above per requirements -->
+
+    <!-- Removed dark executives section per request; keeping only the white-background executives below -->
+
+    <!-- Executives section with increased top spacing -->
+    <section id="executives" class="executives executives-white py-5 bg-white mt-5 pt-5">
+        <div class="container text-center text-black">
+            <h2 class="text-center display-4 mb-4 fw-bold">Our Executives</h2>
+            <h3 class="text-center fw-bold h4 mb-3">Driving Innovation and Results</h3>
+            <p class="text-center mb-5 mx-auto" style="max-width: 800px;">Our team combines creative expertise, administrative precision, and strategic vision to deliver exceptional results.</p>
+            <div class="row justify-content-center text-center">
+                <div class="col-md-3 mb-4 text-center">
+                    <img src="images/mfundo.jpg" alt="Mfundo Dlame" class="rounded-circle mb-3" width="120">
+                    <h5 class="text-black">Mfundo Dlame</h5>
+                    <p class="text-black">CEO & Founder</p>
+                    <p class="text-black">Leading the charge in building profitable marketing systems.</p>
+                </div>
+                <div class="col-md-3 mb-4 text-center">
+                    <img src="images/karabo.jpg" alt="Karabo Bapela" class="rounded-circle mb-3" width="120">
+                    <h5 class="text-black">Karabo Bapela</h5>
+                    <p class="text-black">Creative Director & Co-Founder</p>
+                    <p class="text-black">Crafting bold visuals and stories that captivate audiences.</p>
+                </div>
+                <div class="col-md-3 mb-4 text-center">
+                    <img src="images/owam.jpg" alt="Owam Mputa" class="rounded-circle mb-3" width="120">
+                    <h5 class="text-black">Owam Mputa</h5>
+                    <p class="text-black">Co-Founder & CEO of Accumulate Digital</p>
+                    <p class="text-black">Paid Ad expert ensuring seamless operations and financial excellence.</p>
+                </div>
+                <div class="col-md-3 mb-4 text-center">
+                    <img src="images/brandon.jpg" alt="Brandon Makanza" class="rounded-circle mb-3" width="120">
+                    <h5 class="text-black">Brandon Makanza</h5>
+                    <p class="text-black">Co-Founder & CMO Creative Director of Accumulate Digital</p>
+                    <p class="text-black">Specializing in performance driven content & branding.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact py-5 bg-dark">
+        <div class="container">
+            <h2 class="text-center text-white mb-3 fw-bold">Get in Touch</h2>
+            <form action="https://formspree.io/f/xnngejoz" method="POST" class="mx-auto contact-form p-4 rounded-4" style="max-width: 600px;">
+                <div class="row mb-3">
+                    <div class="col-md-6">
+                        <label for="name" class="form-label">Name</label>
+                        <input type="text" class="form-control" id="name" name="name" required>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="surname" class="form-label">Surname</label>
+                        <input type="text" class="form-control" id="surname" name="surname" required>
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <div class="col-md-6">
+                        <label for="email" class="form-label">Email</label>
+                        <input type="email" class="form-control" id="email" name="email" required>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="phone" class="form-label">Phone Number</label>
+                        <input type="tel" class="form-control" id="phone" name="phone" required>
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label for="message" class="form-label">Leave us a message</label>
+                    <textarea class="form-control" id="message" name="message" rows="5" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-submit d-block mx-auto">Submit</button>
+            </form>
+        </div>
+    </section>
+
+    <footer class="bg-dark text-white text-center py-3">
+        <p>&copy; 2025 BSOV Media. All rights reserved.</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

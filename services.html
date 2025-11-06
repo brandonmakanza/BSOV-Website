@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BSOV Media - Services</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;900&display=swap">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <img src="images/bsov-logo.svg" alt="BSOV Media Logo" height="40">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="services.html">Services</a></li>
+                    <li class="nav-item"><a class="nav-link" href="pricing.html">Pricing</a></li>
+                    <li class="nav-item"><a class="nav-link" href="partners.html">Partners</a></li>
+                </ul>
+                <a href="#contact" class="btn btn-contact ms-auto"><i class="bi bi-telephone"></i> Contact Us</a>
+            </div>
+        </div>
+    </nav>
+
+    <section class="services py-5" style="background-color: #000000;">
+        <div class="container">
+            <div class="services-cards-bg p-4 rounded-4">
+                <div class="services-grid">
+                    <div class="service-card">
+                        <img src="images/service1.jpg" alt="Digital Strategy & Consulting" class="img-fluid mb-2">
+                        <h5>Digital Strategy & Consulting</h5>
+                        <p>Develop tailored strategies for sports organizations, athletes, property developers, and real estate brands—achieving business goals through insight-driven planning and execution.</p>
+                    </div>
+                    <div class="service-card">
+                        <img src="images/service2.jpg" alt="Social Media Management & Content Creation" class="img-fluid mb-2">
+                        <h5>Social Media Management & Content Creation</h5>
+                        <p>Create high-performing content from game-day hype to luxury property showcases, building loyalty and engagement across major platforms.</p>
+                    </div>
+                    <div class="service-card">
+                        <img src="images/service3.jpg" alt="Paid Advertising (PPC & Social Ads)" class="img-fluid mb-2">
+                        <h5>Paid Advertising (PPC & Social Ads)</h5>
+                        <p>Design and manage campaigns on Google, Facebook, Instagram, LinkedIn, and more—delivering targeted traffic and maximizing ROI.</p>
+                    </div>
+                    <div class="service-card">
+                        <img src="images/service4.jpg" alt="Branding & Creative Design" class="img-fluid mb-2">
+                        <h5>Branding & Creative Design</h5>
+                        <p>Craft visual identities and brand stories that set you apart, whether energizing sports fans or showcasing premium developments.</p>
+                    </div>
+                    <div class="service-card">
+                        <img src="images/service5.jpg" alt="SEO & Content Marketing" class="img-fluid mb-2">
+                        <h5>SEO & Content Marketing</h5>
+                        <p>Optimize content, blogs, and backlinks to dominate search rankings and establish authority in your field.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- scroll down arrow -->
+        <a href="#contact" class="scroll-down" aria-label="Scroll to contact">
+            <i class="bi bi-chevron-down"></i>
+        </a>
+    </section>
+
+    <section id="contact" class="contact py-5 bg-light position-relative">
+        <div class="container text-center">
+            <h1 class="text-center fw-bold">Get in Touch</h1>
+            <h2 class="text-center fw-bold">Let's Build Your Brand Together</h2>
+            <!-- decorative floats at left and right edges of contact -->
+            <img src="images/contactfloat-img1.jpeg" aria-hidden="true" alt="" class="contact-float contact-float-left">
+            <img src="images/contactfloat-img2.jpeg" aria-hidden="true" alt="" class="contact-float contact-float-right">
+            <form action="https://formspree.io/f/xnngejoz" method="POST" class="mx-auto" style="max-width: 600px;">
+                <div class="row mb-3">
+                    <div class="col-md-6">
+                        <label for="name" class="form-label">Name</label>
+                        <input type="text" class="form-control" id="name" name="name" required>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="surname" class="form-label">Surname</label>
+                        <input type="text" class="form-control" id="surname" name="surname" required>
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <div class="col-md-6">
+                        <label for="email" class="form-label">Email</label>
+                        <input type="email" class="form-control" id="email" name="email" required>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="phone" class="form-label">Phone Number</label>
+                        <input type="tel" class="form-control" id="phone" name="phone" required>
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label for="message" class="form-label">Leave us a message</label>
+                    <textarea class="form-control" id="message" name="message" rows="5" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-submit d-block mx-auto">Submit</button>
+            </form>
+        </div>
+    </section>
+
+    <footer class="bg-dark text-white text-center py-3">
+        <p>&copy; 2025 BSOV Media. All rights reserved.</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

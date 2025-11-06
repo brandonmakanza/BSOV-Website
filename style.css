@@ -1,0 +1,505 @@
+/* === GLOBAL === */
+body {
+    font-family: 'Inter', sans-serif;
+    background: #FFFFFF;
+    color: #000000;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    font-weight: 900;
+    font-size: 2.8rem;
+    margin: 0 0 0.5rem;
+}
+
+h1.text-white { color: #FFFFFF; }
+
+h2.section-subtitle {
+    font-weight: 700;
+    font-size: 1.4rem;
+    margin: 0.5rem 0 1.2rem;
+    color: #000000;
+}
+
+h2.section-subtitle.text-white { color: #FFFFFF; }
+
+p {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin: 0 0 0.8rem;
+    max-width: 600px;
+}
+
+/* === NAVBAR === */
+.navbar {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    background: transparent;
+    padding: 1rem 0;
+}
+
+/* Center the nav items list horizontally. Keeps the brand and any CTAs (like .btn-contact)
+   in their places while centering the main nav links. Safe for responsive layouts. */
+.navbar .navbar-nav {
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+}
+.navbar .nav-link { text-align: center; }
+
+/* Scroll-down chevron used in hero sections */
+.scroll-down {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 2.25rem;
+    z-index: 60;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgba(255,255,255,0.85);
+    color: #ffffff;
+    background: rgba(0,0,0,0.15);
+    backdrop-filter: blur(4px);
+    cursor: pointer;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.25);
+    animation: sd-bounce 2s infinite;
+}
+.scroll-down i { font-size: 1.05rem; }
+
+@keyframes sd-bounce {
+    0% { transform: translateX(-50%) translateY(0); }
+    50% { transform: translateX(-50%) translateY(10px); }
+    100% { transform: translateX(-50%) translateY(0); }
+}
+
+/* make the small chevron slightly translucent on light backgrounds */
+.hero .scroll-down, .about-hero .scroll-down, .partners-hero .scroll-down, .pricing .scroll-down, .services .scroll-down {
+    border-color: rgba(255,255,255,0.85);
+    color: #fff;
+}
+
+.navbar-brand img {
+    height: 40px;
+    filter: brightness(0) invert(1);
+}
+
+.nav-link {
+    color: #FFFFFF !important;
+    font-weight: 600;
+    padding: 0.5rem 1rem !important;
+}
+
+.nav-link:hover,
+.nav-link.active {
+    color: #CCCCCC !important;
+}
+
+.btn-contact {
+    background: transparent;
+    border: 2px solid #FFFFFF;
+    color: #FFFFFF;
+    padding: 8px 20px;
+    border-radius: 50px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+/* === HERO – hero-image.jpeg + TINT === */
+.hero {
+    min-height: 100vh;
+    /* use the existing hero image file in images/hero-bg.jpeg */
+    background-image: url('images/hero-bg.jpeg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    background-color: #000000; /* fallback color while image loads or if it fails */
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0, 0, 0, 0.75);
+    z-index: 1;
+}
+
+.hero > .container {
+    position: relative;
+    z-index: 2;
+}
+
+.hero h1, .hero .section-subtitle, .hero p {
+    color: #FFFFFF !important;
+}
+
+.hero .section-subtitle {
+    font-weight: 700 !important;
+}
+
+.hero-body {
+    margin-bottom: 2.5rem !important;
+    line-height: 1.6 !important;
+}
+
+/* === BUTTONS === */
+.btn-get-started, .btn-submit {
+    background: rgba(0, 0, 0, 0.7);
+    color: #FFFFFF;
+    padding: 14px 36px;
+    border-radius: 50px;
+    font-weight: 600;
+    border: 1px solid rgba(255,255,255,0.2);
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.btn-get-started:hover, .btn-submit:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 24px rgba(0,0,0,0.3);
+}
+
+/* === SERVICE CARDS === */
+.services-grid {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    /* prefer a single-row scroller on larger screens; allow horizontal scroll when content overflows */
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    padding: 20px 0;
+    scrollbar-width: none;
+}
+
+.services-grid::-webkit-scrollbar { display: none; }
+
+.service-card {
+    background: #1a1a1a;
+    border-radius: 28px;
+    padding: 20px;
+    width: 220px;
+    flex: 0 0 auto;
+    text-align: center;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+}
+
+.service-card:hover {
+    transform: translateY(-8px);
+}
+
+.service-card img {
+    width: 100%;
+    height: 130px;
+    object-fit: cover;
+    border-radius: 18px;
+    margin-bottom: 16px;
+}
+
+.service-card h5 {
+    color: #FFFFFF;
+    font-weight: 600;
+    font-size: 1.1rem;
+    margin: 12px 0 8px;
+}
+
+.service-card p {
+    color: #DDDDDD;
+    font-size: 0.9rem;
+    line-height: 1.6;
+}
+
+/* === PRICING === */
+.pricing {
+    min-height: 140vh; /* double the usual height */
+    display: flex;
+    align-items: center;
+    background-size: cover;
+    background-position: center;
+    padding: 14rem 0 8rem; /* generous top/bottom padding */
+    position: relative;
+}
+
+.pricing .container {
+    position: relative;
+    z-index: 2;
+}
+
+.pricing h1 {
+    margin-bottom: 1.5rem;
+}
+
+.pricing > .container > p {
+    margin: 0 auto 4rem;
+    max-width: 800px;
+}
+
+.pricing .card {
+    background: rgba(0, 0, 0, 0.7);
+    border-radius: 28px;
+    padding: 20px;
+    height: 100%;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255,255,255,0.1);
+    transition: all 0.3s ease;
+}
+
+.pricing .card:hover {
+    transform: translateY(-8px);
+}
+
+.pricing .card-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    text-align: center;
+}
+
+.pricing .card-body * {
+    color: #FFFFFF !important;
+}
+
+/* === MOBILE NAV OVERLAY === */
+@media (max-width: 991.98px) {
+    .navbar-collapse {
+        background: #000000cc;
+        padding: 1rem;
+        border-radius: 0 0 16px 16px;
+        margin-top: 10px;
+    }
+}
+
+/* === RESPONSIVE === */
+@media (max-width: 992px) {
+    .services-grid { flex-wrap: wrap; overflow-x: visible; }
+    .service-card { width: 45%; margin-bottom: 20px; }
+}
+
+@media (max-width: 768px) {
+    h1 { font-size: 2.2rem; }
+    h2.section-subtitle { font-size: 1.2rem; }
+    .hero { min-height: 80vh; }
+    .service-card { width: 90%; }
+}
+
+/* === ABOUT PAGE SPECIFIC === */
+.about-hero {
+    /* darker tint for text legibility; using the about image (user referenced "about-img" — mapped to existing about-bg.jpg)
+       If you have a file named exactly about-img.* please let me know and I'll update the path. */
+    background-image: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)), url('images/about-bg.jpg');
+    background-size: cover;
+    background-position: center center;
+    position: relative;
+}
+
+.about-hero .hero-text { max-width: 720px; }
+
+/* center hero text horizontally and vertically inside the hero so it doesn't clash with floats */
+.about-hero .container { display: flex; align-items: center; justify-content: center; min-height: 60vh; }
+.about-hero .hero-text { margin: 0 auto; text-align: center; position: relative; z-index: 4; }
+
+/* Floating decorative images: hidden by default (prevents them appearing on other pages)
+   Scoped styles below enable floats only inside the about page hero (.about-hero) */
+.floating-img { display: none; }
+
+/* Floating decorative images — only inside .about-hero */
+.about-hero .floating-img {
+    display: block;
+    position: absolute;
+    /* round all corners */
+    border-radius: 60px;
+    object-fit: cover;
+    transition: transform 0.3s ease, filter 0.3s ease;
+    pointer-events: none; /* decorative only */
+    /* keep natural image dimensions (no fixed width/height). */
+    width: auto;
+    height: auto;
+    /* modest scale and vertical shift to sit visually where intended */
+        transform: scale(0.18) translateY(-3000px);
+        /* slow rising effect */
+        animation-name: floatUp;
+        animation-duration: 8s;
+        animation-timing-function: ease-in-out;
+        animation-iteration-count: infinite;
+        animation-direction: alternate;
+    transform-origin: center center;
+}
+.about-hero .floating-img.blurred { filter: blur(4px) brightness(0.9); }
+
+/* Place floats further outside the main text column and keep them behind text (lower z-index) */
+.about-hero .float-1 { left: -520px; top: 12%; z-index: 2; }
+.about-hero .float-2 { left: -460px; top: 14%; z-index: 3; }
+.about-hero .float-5 { left: -460px; bottom: 6%; z-index: 1; border-radius: 8px; }
+
+.about-hero .float-3 { right: -530px; top: 65%; z-index: 1; }
+.about-hero .float-4 { right: -450px; top: 75%; z-index: 3; }
+.about-hero .float-6 { right: -400px; top: 70%; z-index: 2; }
+
+/* slight per-float timing offsets for natural motion */
+.about-hero .float-1 { animation-duration: 9s; animation-delay: 0s; }
+.about-hero .float-2 { animation-duration: 10s; animation-delay: 0.5s; }
+.about-hero .float-3 { animation-duration: 8.5s; animation-delay: 0.2s; }
+.about-hero .float-4 { animation-duration: 9.5s; animation-delay: 0.3s; }
+.about-hero .float-5 { animation-duration: 11s; animation-delay: 0.6s; }
+.about-hero .float-6 { animation-duration: 10.5s; animation-delay: 0.4s; }
+
+/* keyframes for slow rising effect (keeps scale) */
+@keyframes floatUp {
+    0% { transform: scale(0.18) translateY(-3000px); }
+    50% { transform: scale(0.18) translateY(-3100px); }
+    100% { transform: scale(0.18) translateY(-3000px); }
+}
+
+/* tweak sizes on small screens */
+@media (max-width: 768px) {
+    .float-1, .float-2, .float-3, .float-4, .float-5, .float-6 { display: none; }
+}
+
+/* services page specific background behind cards */
+.services {
+    /* full-section background with black tint */
+    background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('images/services-bg.jpeg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    /* increased top spacing so the heading clears the navbar and appears visually centered */
+    padding-top: 14rem;
+
+    /* extra space below the section so the following contact header sits clear */
+    padding-bottom: 4rem;
+    position: relative;
+}
+
+/* partners hero */
+.partners-hero {
+    /* full-section background with a dark tint for legibility */
+    background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('images/partners-bg.jpeg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    /* increase top padding to create more vertical space and push content down */
+    /* reduced from 200vh to a less extreme 150vh and lowered top padding */
+    min-height: 150vh;
+    padding: 30rem 0 8rem;
+    display: flex;
+    align-items: center;
+    color: #FFFFFF;
+}
+
+.partners-hero .container { text-align: center; position: relative; z-index: 2; }
+.partners-hero .partners-logo { max-width: 220px; margin: 2.5rem auto 1.25rem; display: block; }
+.partners-hero h1 { color: #FFFFFF; font-weight: 800; }
+/* keep the subheading (lead) bold but make regular body copy normal weight */
+.partners-hero p.lead { color: #FFFFFF; font-weight: 700; margin-bottom: 2rem; }
+.partners-hero p { color: #FFFFFF; font-weight: 400; margin-bottom: 1.25rem; }
+
+/* ensure section subtitle is white and bold */
+.partners-hero .section-subtitle {
+    color: #FFFFFF;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+/* constrain partner body copy width and keep centered under the subtitle */
+.partners-hero p {
+    max-width: 820px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+/* Ensure everything inside the partners hero is centered (defensive rule) */
+.partners-hero .container * {
+    text-align: center !important;
+}
+
+/* reduce the giant spacing on small screens so content doesn't get pushed off-screen */
+@media (max-width: 768px) {
+    .partners-hero { padding: 8rem 0 4rem; background-attachment: scroll; }
+    .partners-hero .partners-logo { max-width: 160px; margin-top: 1rem; }
+}
+
+/* make the services subheading bolder so it reads as the user expects */
+.services > .container > p {
+    font-weight: 700;
+    /* slightly smaller so it reads like a subheading */
+    font-size: 0.95rem;
+    margin-top: 0.5rem;
+}
+
+.services-cards-bg {
+    padding: 40px;
+    /* push cards lower within the section so the heading and cards have a clear gap */
+    margin-top: 5rem;
+}
+
+.services-cards-bg .services-grid { gap: 24px; justify-content: center; }
+.services-cards-bg .service-card {
+    width: 220px; /* slightly smaller cards */
+    padding: 20px;
+    border-radius: 20px;
+    /* lighter / less opaque per user preference */
+    background: rgba(0,0,0,0.45);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.35);
+    /* scale down slightly for compact look; hover returns to full size */
+    transform: scale(0.95);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.services-cards-bg .service-card:hover {
+    transform: translateY(-8px) scale(1);
+}
+
+.services-cards-bg .service-card img { height: 120px; }
+.services-cards-bg .service-card h5 { color: #FFFFFF; font-weight: 700; }
+.services-cards-bg .service-card p { color: #E6E6E6; }
+
+/* contact section floats */
+.contact { position: relative; }
+.contact { margin-top: 2.5rem; }
+.contact .contact-float { position: absolute; width: 310px; height: auto; object-fit: cover; border-radius: 12px; pointer-events: none; }
+.contact .contact-float-left { left: -50px; top: 20%; transform: translateY(-10%); }
+.contact .contact-float-right { right: -50px; top: 20%; transform: translateY(-10%); }
+
+@media (max-width: 768px) {
+    .contact .contact-float { display: none; }
+}
+
+/* Ensure hero text sits above decorative floats */
+.about-hero .container { position: relative; z-index: 3; }
+.about-hero .hero-text { position: relative; z-index: 4; }
+
+/* executives white section adjustments */
+.executives-white h2 { color: #000000; font-weight: 800; }
+.executives-white p { color: #000000; }
+.executives-white .col-md-3 h5 { color: #000000; font-weight: 700; }
+.executives-white .col-md-3 h5 + p { color: #000000; font-weight: 700; }
+
+/* contact form on dark bg - make inputs visible */
+.contact.bg-dark .form-control { background: rgba(255,255,255,0.03); color: #FFFFFF; border: 1px solid rgba(255,255,255,0.06); }
+.contact.bg-dark .form-label { color: #FFFFFF; }
+.contact.bg-dark .btn-submit { background: rgba(255,255,255,0.08); color: #FFFFFF; border-color: rgba(255,255,255,0.12); }
+
+/* white form on dark contact section (match homepage style) */
+.contact .contact-form { background: #FFFFFF; border: 1px solid rgba(0,0,0,0.06); }
+.contact .contact-form .form-control { background: #FFFFFF; color: #000000; border: 1px solid rgba(0,0,0,0.08); }
+.contact .contact-form .form-label { color: #000000; }
+.contact .contact-form textarea.form-control { min-height: 140px; }
+.contact .contact-form .btn-submit { background: rgba(0,0,0,0.85); color: #FFFFFF; border-color: rgba(0,0,0,0.6); }
